@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .main {
+      margin: auto;
+      text-align: center;
+      border:2px solid black;
+      padding:10px;
+      height:94vh;
+    }
+
+    span {
+      background-color: yellow;
+      font-size: 20px;
+      margin-left: 20px;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    button {
+      padding: 10px;
+      color: white;
+      background-color: black;
+      margin-left: 50px;
+      margin-top: 10px;
+      border-radius: 10px;
+      width: 200px;
+    }
+
+    .result {
+      width: 400px;
+      height: 30px;
+      padding: 10px;
+      border: 2px solid black;
+      color: green;
+      font-size: 28px;
+      border-radius: 10px;
+      font-weight: 800;
+      margin: auto;
+    }
+
+    .finalResult {
+      width: 350px;
+      height: 30px;
+      padding: 10px;
+      border: 2px solid black;
+      color: green;
+      font-size: 28px;
+      border-radius: 10px;
+      font-weight: 800;
+      margin: auto;
+    }
+    .game{
+      float:left;
+    }
+    .notice{
+      float:right;
+      width:400px;
+      height:500px;
+      border:2px solid black;
+    }
+    .notice h3{
+      color:green;
+    }
+
+    
+
+  </style>
+</head>
+
+<body>
+
+  <div class="main">
+    <h1>&#128512; &#128512; TRY TO YOUR LUCK  &#128512; &#128512;</h1>
+
+  <hr><br><br><div class="game">
+    <span>Apple</span>
+    <span>Banana</span>
+    <span>Orange</span>
+    <span>Grape</span>
+    <span>Guava</span>
+    <span>Pear</span>
+    <span>Coconut</span>
+    <span>Sugarcane</span>
+    <br><br><br>
+
+    <h3 style="display:inline;">Note :-</h3>
+    <h4 style="color:red; display:inline"> Choose 1 option then click button .</h4>
+    <br><br>
+    <br>
+    <label for="cars" style="font-size:25px;">Choose Your only one option:</label>
+
+    <select class="cars" id="cars" style="font-size:25px; background-color:yellow; border-radius:10px; padding:10px">
+      <option value="Apple">Apple</option>
+      <option value="Banana">Banana</option>
+      <option value="Orange">Orange</option>
+      <option value="Grape">Grape</option>
+      <option value="Guava">Guava</option>
+      <option value="Pear">Pear</option>
+      <option value="Coconut">Coconut</option>
+      <option value="Sugarcane">Sugarcane</option>
+    </select>
+    <h3>Result:</h3>
+    <label for="result" style="font-size:25px;">✨ Luck Your Chance !</label>
+    <div id="result" class="finalResult"></div> <br>
+    
+    
+    
+    
+    <h3>Show your result:</h3>
+
+    <div id="final" class="result"></div> <br>
+
+    <button onclick="timeFunction();">Show result</button>
+    <button onclick="location.reload();" style="background:green;"> start</button>
+</div>
+<div class="notice">
+  <h2>Game Step :-</h2><hr style="height:2px; background:black;">
+  <h2>
+    Step 1 :-
+  </h2>
+  <h3>Click Start Button</h3><hr>
+  <h2>
+    Step 2 :-
+  </h2>
+  <h3>Choose your 1 Option</h3><hr>
+  <h2>
+    Step 3 :-
+  </h2>
+  <h3>Click Show Result Button</h3><hr>
+  <h2>
+  Step 4 :-
+  </h2>
+  <h3>Finally Show your Result</h3>
+  
+</div>
+  </div>
+  <script>
+
+
+
+    function timeFunction(){
+      document.getElementById("result").innerHTML= "Waiting.................🙄";
+      document.getElementById("final").innerHTML = "Waiting.................🙄";
+    setTimeout(
+    function show() {
+        var fruit=["Apple","Banana","Orange","Grape","Guava","Pear","Coconut","Sugarcane"];
+        var ran= Math.floor(Math.random() * 10);
+
+      var x=(fruit[ran]);
+      document.getElementById("result").innerHTML = x;
+
+      var e = document.getElementById("cars");
+      var y = e.value;
+      if (x === y) {
+        document.getElementById("final").style.color = "green";
+        document.getElementById("final").innerHTML = "You are win 😀";
+      } else {
+        document.getElementById("final").style.color = "red"
+        document.getElementById("final").innerHTML = "You are loss 😔";
+      }
+    },10000);}
+
+    //document.getElementById("final").innerHtml = "You are win";
+  </script>
+</body>
+
+</html>
